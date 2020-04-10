@@ -46,7 +46,7 @@ python-editor==1.0.3
 python-systemd==231
 pyxdg==0.25
 reportlab==3.3.0
-requests==2.9.1
+requests==2.20.0
 sessioninstaller==0.0.0
 six==1.11.0
 SQLAlchemy==1.2.14
