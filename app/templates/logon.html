@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- formulario -->
+      <div class="container">
+        <div class="section" >
+          <h6>Logon</h6>
+          <div class="row">
+            <form class="col s12" action="" method="post">
+              {{form.csrf_token }}
+             <div class="row">
+               <div class="input-field col s12">
+                 <!-- <input id="name" type="text" class="validate"> -->
+                 <label for="name">Nome Completo</label>
+                 {{ form.name(class="form-control")}}
+               </div>
+             </div>
+             <div class="row">
+               <div class="input-field col s12">
+                 <!-- <input id="username" type="text" class="validate"> -->
+                 <label for="username">Nome de usuário</label>
+                 {{ form.username(class="form-control")}}
+               </div>
+             </div>
+             <div class="row">
+               <div class="input-field col s12">
+                 <!-- <input id="email" type="email" class="validate"> -->
+                 <label for="email">Email</label>
+                 {{ form.email(class="form-control")}}
+               </div>
+             </div>
+             <div class="row">
+               <div class="input-field col s12">
+                 <!-- <input id="password" type="password" class="validate"> -->
+                 <label for="password">Senha</label>
+                 {{ form.password(class="form-control")}}
+               </div>
+             </div>
+
+             {% with messages = get_flashed_messages() %}
+             {% if messages %}
+             <div class="alert alert-warning">
+               <ul class=flashes>
+                 {% for message in messages %}
+                 <li>{{ message }}</li>
+                 {% endfor %}
+               </ul>
+             </div>
+             {% endif %}
+             {% endwith %}
+
+             <button type="submit" class="btn btn-default">Criar Conta</button>
+
+             <br><br><br>
+             <div class="row">
+               <h6>Já possui conta?</h6>
+               <!-- <button type="" class="btn btn-default">Criar conta</button> -->
+               <a href="login.html" class="btn btn-default">Entrar</a>
+             </div>
+
+           </form>
+          </div>
+
+                <!-- Modal Trigger -->
+                <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login</a> -->
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                  <div class="modal-content">
+                    <h4>Logado com sucesso</h4>
+                    <p>Parabéns, você acaba de logar com sucesso, seu felizardo!!!</p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Blz, fera</a>
+                  </div>
+                </div>
+
+                </div>
+
+
+          </div>
+
+
+{% endblock %}
