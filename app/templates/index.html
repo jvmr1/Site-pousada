@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- carrossel -->
+    <div class="carousel carousel-slider" data-indicators="true">
+
+        <div class="carousel-fixed-item center middle-indicator with-indicators">
+             <div class="left">
+              <a href="Previo" class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons left  middle-indicator-text">chevron_left</i></a>
+             </div>
+
+             <div class="right">
+             <a href="Siguiente" class=" moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons right middle-indicator-text">chevron_right</i></a>
+             </div>
+        </div>
+
+        <a class="carousel-item" href="#one!">
+          <img src="{{ url_for('static', filename='carrossel1.jpg') }}">
+        </a>
+        <a class="carousel-item" href="#two!">
+          <img src="{{ url_for('static', filename='carrossel2.jpg') }}">
+        </a>
+        <a class="carousel-item" href="#three!">
+          <img src="{{ url_for('static', filename='carrossel3.jpg') }}">
+        </a>
+      </div>
+
+    <!-- Cadastrar ou entrar pra reservar -->
+    <section class="grey lighten-2">
+      <div class="container">
+        <div class="section" >
+
+              <div class="row">
+                <div class="col s12 m6">
+                  <h6>Entre ou cadastre-se para reservar um quarto!</h6>
+                </div>
+
+                <div class="col s12 m3">
+                  <!-- Modal Trigger -->
+                  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Entrar</a> -->
+                  <a href="login.html" class="btn btn-default">Entrar</a>
+
+                </div>
+
+              <div class="col s12 m3">
+                <!-- Modal Trigger -->
+                <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Cadastrar</a> -->
+                <a href="logon.html" class="btn btn-default">Cadastrar</a>
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                  <div class="modal-content">
+                    <h4>Reservado com sucesso</h4>
+                    <p>Parabéns, você acaba de reservar com sucesso, seu felizardo!!!</p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Blz, fera</a>
+                  </div>
+                </div>
+
+                </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- descrição -->
+    <div class="container">
+      <div class="section">
+
+        <div class="row">
+          <div class="col s12 center">
+            <h3><i class="mdi-content-send brown-text"></i></h3>
+            <h4>Descrição</h4>
+            <p class="left-align light">
+              A Hospedagem São Francisco está localizada à Rua Um, 81 - Bairro São Francisco – CEP – 65 076 320 - São Luís - Ma. A 14 km do aeroporto, 11 km da rodoviária, 7 do terminal ferroviário, 3,5 km de uma das principais praias, a do Calhau onde fica Avenida Litorânea, 1,5 km do Centro Histórico, 1,5 km de um dos melhores São Luiz Shoppings da cidade e 5 km da UFMA. Trabalhamos com turismo, negociamos passeios, em São Luís, Lençóis Maranhenses, Chapada das Mesas, Delta das Américas, Jericoacoara e outros.<br><br>
+
+              Obs.: Hospedagem São Francisco é composta de apartamento, com TV por assinatura, internet, ar refrigerado, frigobar e banheiro com box de vidro e ducha quente, sem café da manhã. A partir de seis pessoas em quarto comunitário, todos completos.<br><br>
+
+              Hospedagem São Francisco possui um terraço e sol. Estacionamento privado, taxa adicional a combinar.<br><br>
+
+              Cada apartamento nesta Hospedagem contém: ar condicionado, TV por assinatura, frigobar, banheiro com ducha quente e box vidro, cama para casal, guarda roupa ou roupeiro.<br><br>
+
+              Dispomos de cozinha bem aparelhada, para quem interessar. Taxa de conservação a combinar.<br><br>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--quartos -->
+    <div class="container">
+      <h3 align="center">Quartos</h3>
+      <div class="section">
+
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="medium card">
+                  <div class="card-image">
+                    <img src="{{ url_for('static', filename='quarto1.jpg') }}">
+                    <span class="card-title">Quarto Individual</span>
+                  </div>
+                  <div class="card-content">
+                    <p>I am a very simple quarto. I am good at containing small bits of uma cama.
+                    I am convenient because I require little soninho to use effectively.</p>
+                  </div>
+                  <div class="card-action">
+                    <!--<a href="#">Reservar</a>-->
+                    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Reservar</a> -->
+                    <a href="{{ url_for('quartos') }}" class="btn btn-default">Conhecer</a>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col s12 m6">
+                <div class="medium card">
+                  <div class="card-image">
+                    <img src="{{ url_for('static', filename='quarto2.jpg') }}">
+                    <span class="card-title">Quarto Duplo</span>
+                  </div>
+                  <div class="card-content">
+                    <p>I am a very duplo quarto. I am good at containing small bits of duas camas.
+                    I am convenient because I require little pessoas to use effectively.</p>
+                  </div>
+                  <div class="card-action">
+                    <!--<a href="#">Reservar</a>-->
+                    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Reservar</a> -->
+                    <a href="{{ url_for('quartos') }}" class="btn btn-default">Conhecer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="medium card">
+                  <div class="card-image">
+                    <img src="{{ url_for('static', filename='quarto3.jpg') }}">
+                    <span class="card-title">Suíte</span>
+                  </div>
+                  <div class="card-content">
+                    <p>I am a very complex quarto. I am good at containing small bits of monte de coisas.
+                    I am convenient because I require little bagunça to use effectively.</p>
+                  </div>
+                  <div class="card-action">
+                    <!--<a href="#">Reservar</a>-->
+                    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Reservar</a> -->
+                    <a href="{{ url_for('quartos') }}" class="btn btn-default">Conhecer</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s12 m6">
+                <div class="medium card">
+                  <div class="card-image">
+                    <img src="{{ url_for('static', filename='quarto4.jpg') }}">
+                    <span class="card-title">Suíte</span>
+                  </div>
+                  <div class="card-content">
+                    <p>I am a very complex quarto. I am good at containing small bits of monte de coisas.
+                    I am convenient because I require little bagunça to use effectively.</p>
+                  </div>
+                  <div class="card-action">
+                    <!--<a href="#">Reservar</a>-->
+                    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Reservar</a> -->
+                    <a href="{{ url_for('quartos') }}" class="btn btn-default">Conhecer</a>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!--comodidades -->
+    <div class="container">
+      <h3 align="center">Comodidades</h3>
+      <div class="section">
+            <div class="row">
+              <div class="col s12 m4">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="{{ url_for('static', filename='cozinha.jpg') }}">
+                    <span class="card-title">Cozinha</span>
+                  </div>
+                  <div class="card-content">
+                    <p>I am a very simple cozinha. I am good at cooking small bits of comida.
+                    I am convenient because I require little ingredientes to make comidinhas effectively.</p>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <div class="col s12 m4">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="{{ url_for('static', filename='terraco.jpg') }}">
+                    <span class="card-title">Terraço</span>
+                  </div>
+                  <div class="card-content">
+                    <p>I am a very simple terraço. I am good at containing small bits of lazer.
+                    I am convenient because I require little bancos to reunir pessoinhas effectively.</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col s12 m4">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="{{ url_for('static', filename='estacionamento.jpg') }}">
+                    <span class="card-title">Estacionamento</span>
+                  </div>
+                  <div class="card-content">
+                    <p>I am a very simple estacionamento. I am good at containing small bits of cars.
+                      I am convenient because I require little espaço to estacionar carrinhos effectively.</p>
+                  </div>
+
+                </div>
+              </div>
+
+        </div>
+
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- formulario -->
+      <div class="container">
+        <div class="section" >
+          <h6>Login</h6>
+            <div class="row">
+               <form class="col s12" action="" method="post">
+                 {{form.csrf_token }}
+                 <div class="row">
+                   <div class="input-field col s6">
+                     <!-- <input id="username" type="text" class="validate"> -->
+                     <label for="username">Usuário</label>
+                     <!-- <label>Username</label> -->
+                     {{ form.username(class="form-control")}}
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="input-field col s6">
+                     <!-- <input id="password" type="password" class="validate"> -->
+                     <label for="password">Senha</label>
+                     <!-- <label>Password</label> -->
+                     {{ form.password(class="form-control")}}
+                     <a href="">Esqueceu a senha?</a>
+                   </div>
+                 </div>
+                 <!-- <div class="row">
+                   <p>
+                      <label>
+                        <input type="checkbox" class="filled-in"/>
+                        <span>Manter conectado</span>
+                        {{ form.remember_me }}
+                      </label>
+                    </p>
+                  </div> -->
+
+                  {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                  <div class="alert alert-warning">
+                    <ul class=flashes>
+                      {% for message in messages %}
+                      <li>{{ message }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  {% endif %}
+                  {% endwith %}
+
+                  <button type="submit" class="btn btn-default">Entrar</button>
+
+                  <br><br><br>
+                  <div class="row">
+                    <h6>Não possui conta?</h6>
+                    <!-- <button type="" class="btn btn-default">Criar conta</button> -->
+                    <a href="logon.html" class="btn btn-default">Criar Conta</a>
+                  </div>
+
+               </form>
+             </div>
+
+                <!-- Modal Trigger -->
+                <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login</a> -->
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                  <div class="modal-content">
+                    <h4>Logado com sucesso</h4>
+                    <p>Parabéns, você acaba de logar com sucesso, seu felizardo!!!</p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Blz, fera</a>
+                  </div>
+                </div>
+
+                </div>
+
+
+          </div>
+
+
+{% endblock %}

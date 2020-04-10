@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!--quartos -->
+    <div class="container">
+      <h3 align="center">Quartos</h3>
+      <div class="section">
+        <form action="" method="POST">
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="medium card">
+                  <div class="card-image">
+                    <img src="{{ url_for('static', filename='quarto1.jpg') }}">
+                    <span class="card-title">Quarto Individual</span>
+                  </div>
+                  <div class="card-content">
+                    <p>I am a very simple quarto. I am good at containing small bits of uma cama.
+                    I am convenient because I require little soninho to use effectively.</p>
+                  </div>
+                  <div class="card-action">
+                    <!--<a href="#">Reservar</a>-->
+                    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Reservar</a> -->
+                    {% if current_user.is_authenticated %}
+                      <!-- <a class="btn btn-default">Reservar</a> -->
+                        <!-- <input type="submit" class="btn btn-default modal-trigger" href="#modal1" name="quarto1" value="Reservar"> -->
+                        <input type="submit" class="btn btn-default" name="quarto1" value="Reservar">
+                      <!-- <a href=”/reservar”><input type=”button” value=”call_flask_funtion”></a> -->
+                    {% else %}
+                      <a href="{{ url_for('login') }}" class="btn btn-default">Entre para reservar</a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col s12 m6">
+                <div class="medium card">
+                  <div class="card-image">
+                    <img src="{{ url_for('static', filename='quarto2.jpg') }}">
+                    <span class="card-title">Quarto Duplo</span>
+                  </div>
+                  <div class="card-content">
+                    <p>I am a very duplo quarto. I am good at containing small bits of duas camas.
+                    I am convenient because I require little pessoas to use effectively.</p>
+                  </div>
+                  <div class="card-action">
+                    <!--<a href="#">Reservar</a>-->
+                    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Reservar</a> -->
+                    {% if current_user.is_authenticated %}
+                      <!-- <a class="btn btn-default">Reservar</a> -->
+                        <input type="submit" class="btn btn-default" name="quarto2" value="Reservar">
+                    {% else %}
+                      <a href="{{ url_for('login') }}" class="btn btn-default">Entre para reservar</a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col s12 m6">
+                  <div class="medium card">
+                    <div class="card-image">
+                      <img src="{{ url_for('static', filename='quarto3.jpg') }}">
+                      <span class="card-title">Quarto Casal</span>
+                    </div>
+                    <div class="card-content">
+                      <p>I am a very simple quarto. I am good at containing small bits of uma cama.
+                      I am convenient because I require little soninho to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                      <!--<a href="#">Reservar</a>-->
+                      <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Reservar</a> -->
+                      {% if current_user.is_authenticated %}
+                        <!-- <a class="btn btn-default">Reservar</a> -->
+                          <input type="submit" class="btn btn-default" name="quarto3" value="Reservar">
+                      {% else %}
+                        <a href="{{ url_for('login') }}" class="btn btn-default">Entre para reservar</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col s12 m6">
+                  <div class="medium card">
+                    <div class="card-image">
+                      <img src="{{ url_for('static', filename='quarto4.jpg') }}">
+                      <span class="card-title">Quarto Suite</span>
+                    </div>
+                    <div class="card-content">
+                      <p>I am a very duplo quarto. I am good at containing small bits of duas camas.
+                      I am convenient because I require little pessoas to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                      <!--<a href="#">Reservar</a>-->
+                      <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Reservar</a> -->
+                      {% if current_user.is_authenticated %}
+                        <!-- <a class="btn btn-default">Reservar</a> -->
+
+                          <input type="submit" class="btn btn-default" name="quarto4" value="Reservar">
+
+                      {% else %}
+                        <a href="{{ url_for('login') }}" class="btn btn-default">Entre para reservar</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <h4>Reservado com sucesso</h4>
+                <p>Parabéns, você acaba de reservar com sucesso, seu felizardo!!!</p>
+                <p>Dirija-se à Pousada e divirta-se!!!</p>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Blz, fera</a>
+              </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+{% endblock %}
